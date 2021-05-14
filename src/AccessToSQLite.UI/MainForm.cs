@@ -20,7 +20,7 @@ namespace AccessToSQLite.UI
         private MainForm()
         {
             InitializeComponent();
-            
+
             var assembly = Assembly.GetExecutingAssembly();
             var fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             Text = $"AccessToSQLite v{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}";
@@ -104,6 +104,11 @@ namespace AccessToSQLite.UI
                 RefreshForm();
 
             }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private void _txtAccessPassword_TextChanged(object sender, EventArgs e)
+        {
+            _options.AccessPassword = _txtAccessPassword?.Text;
         }
     }
 }

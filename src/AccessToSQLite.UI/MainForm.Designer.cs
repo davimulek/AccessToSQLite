@@ -64,8 +64,10 @@
             // 
             this._txtAccessPassword.Location = new System.Drawing.Point(67, 51);
             this._txtAccessPassword.Name = "_txtAccessPassword";
+            this._txtAccessPassword.PasswordChar = '*';
             this._txtAccessPassword.Size = new System.Drawing.Size(176, 22);
             this._txtAccessPassword.TabIndex = 3;
+            this._txtAccessPassword.TextChanged += new System.EventHandler(this._txtAccessPassword_TextChanged);
             // 
             // _btnAccessSelect
             // 

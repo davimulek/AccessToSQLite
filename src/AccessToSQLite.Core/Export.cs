@@ -41,7 +41,7 @@ namespace AccessToSQLite.Core
             {
                 if (ex.Message == "Not a valid password.")
                     return ExportResult.PasswordInvalid;
-                
+
                 return ExportResult.ImportError;
             }
 
@@ -76,7 +76,7 @@ namespace AccessToSQLite.Core
                 tx.Commit();
             }
         }
-        
+
         private string ImportTable(DataTable dataTable)
         {
             var tableName = dataTable.FixedTableName();
@@ -117,14 +117,14 @@ namespace AccessToSQLite.Core
         {
             var type = dataColumn.DataType;
 
-            if (type == typeof(int) || type == typeof(short) || type == typeof(long) || type == typeof(bool))
+            if (type == typeof(int) || type == typeof(short) || type == typeof(long) || type == typeof(bool) || type == typeof(byte))
                 return "INTEGER";
             else if (type == typeof(string) || type == typeof(DateTime))
                 return "TEXT";
             else if (type == typeof(float) || type == typeof(double) || type == typeof(decimal))
                 return "REAL";
 
-            throw new Exception("Unknown Column Type");
+            throw new ArgumentOutOfRangeException($"Unknown Column Type. '{type.FullName}'");
         }
     }
 
