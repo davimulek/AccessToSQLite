@@ -28,67 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._grpImport = new System.Windows.Forms.GroupBox();
-            this._txtAccessPassword = new System.Windows.Forms.TextBox();
-            this._btnAccessSelect = new System.Windows.Forms.Button();
-            this._txtAccessFileName = new System.Windows.Forms.TextBox();
+            this.grpImport = new System.Windows.Forms.GroupBox();
+            this.txtAccessPassword = new System.Windows.Forms.TextBox();
+            this.btnAccessSelect = new System.Windows.Forms.Button();
+            this.txtAccessFileName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._btnExport = new System.Windows.Forms.Button();
-            this._rtxLogs = new System.Windows.Forms.RichTextBox();
-            this._grpExport = new System.Windows.Forms.GroupBox();
-            this._txtSQLiteFileName = new System.Windows.Forms.TextBox();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.rtxLogs = new System.Windows.Forms.RichTextBox();
+            this.grpExport = new System.Windows.Forms.GroupBox();
+            this.txtSQLiteFileName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this._btnSQLiteSelect = new System.Windows.Forms.Button();
-            this._grpImport.SuspendLayout();
-            this._grpExport.SuspendLayout();
+            this.btnSQLiteSelect = new System.Windows.Forms.Button();
+            this.grpImport.SuspendLayout();
+            this.grpExport.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _grpImport
+            // grpImport
             // 
-            this._grpImport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpImport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._grpImport.Controls.Add(this._txtAccessPassword);
-            this._grpImport.Controls.Add(this._btnAccessSelect);
-            this._grpImport.Controls.Add(this._txtAccessFileName);
-            this._grpImport.Controls.Add(this.label2);
-            this._grpImport.Controls.Add(this.label1);
-            this._grpImport.Location = new System.Drawing.Point(13, 13);
-            this._grpImport.Name = "_grpImport";
-            this._grpImport.Size = new System.Drawing.Size(375, 85);
-            this._grpImport.TabIndex = 0;
-            this._grpImport.TabStop = false;
-            this._grpImport.Text = "Access Import";
+            this.grpImport.Controls.Add(this.txtAccessPassword);
+            this.grpImport.Controls.Add(this.btnAccessSelect);
+            this.grpImport.Controls.Add(this.txtAccessFileName);
+            this.grpImport.Controls.Add(this.label2);
+            this.grpImport.Controls.Add(this.label1);
+            this.grpImport.Location = new System.Drawing.Point(13, 13);
+            this.grpImport.Name = "grpImport";
+            this.grpImport.Size = new System.Drawing.Size(375, 85);
+            this.grpImport.TabIndex = 0;
+            this.grpImport.TabStop = false;
+            this.grpImport.Text = "Access Import";
             // 
-            // _txtAccessPassword
+            // txtAccessPassword
             // 
-            this._txtAccessPassword.Location = new System.Drawing.Point(67, 51);
-            this._txtAccessPassword.Name = "_txtAccessPassword";
-            this._txtAccessPassword.PasswordChar = '*';
-            this._txtAccessPassword.Size = new System.Drawing.Size(176, 22);
-            this._txtAccessPassword.TabIndex = 3;
-            this._txtAccessPassword.TextChanged += new System.EventHandler(this._txtAccessPassword_TextChanged);
+            this.txtAccessPassword.Location = new System.Drawing.Point(67, 51);
+            this.txtAccessPassword.Name = "txtAccessPassword";
+            this.txtAccessPassword.PasswordChar = '*';
+            this.txtAccessPassword.Size = new System.Drawing.Size(176, 22);
+            this.txtAccessPassword.TabIndex = 3;
+            this.txtAccessPassword.TextChanged += new System.EventHandler(this.TxtAccessPassword_TextChanged);
             // 
-            // _btnAccessSelect
+            // btnAccessSelect
             // 
-            this._btnAccessSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnAccessSelect.Location = new System.Drawing.Point(341, 21);
-            this._btnAccessSelect.Name = "_btnAccessSelect";
-            this._btnAccessSelect.Size = new System.Drawing.Size(28, 23);
-            this._btnAccessSelect.TabIndex = 2;
-            this._btnAccessSelect.Text = "...";
-            this._btnAccessSelect.UseVisualStyleBackColor = true;
-            this._btnAccessSelect.Click += new System.EventHandler(this._btnAccessSelect_Click);
+            this.btnAccessSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccessSelect.Location = new System.Drawing.Point(341, 21);
+            this.btnAccessSelect.Name = "btnAccessSelect";
+            this.btnAccessSelect.Size = new System.Drawing.Size(28, 23);
+            this.btnAccessSelect.TabIndex = 2;
+            this.btnAccessSelect.Text = "...";
+            this.btnAccessSelect.UseVisualStyleBackColor = true;
+            this.btnAccessSelect.Click += new System.EventHandler(this.BtnAccessSelect_Click);
             // 
-            // _txtAccessFileName
+            // txtAccessFileName
             // 
-            this._txtAccessFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtAccessFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._txtAccessFileName.Location = new System.Drawing.Point(67, 23);
-            this._txtAccessFileName.Name = "_txtAccessFileName";
-            this._txtAccessFileName.ReadOnly = true;
-            this._txtAccessFileName.Size = new System.Drawing.Size(268, 22);
-            this._txtAccessFileName.TabIndex = 1;
+            this.txtAccessFileName.Location = new System.Drawing.Point(67, 23);
+            this.txtAccessFileName.Name = "txtAccessFileName";
+            this.txtAccessFileName.ReadOnly = true;
+            this.txtAccessFileName.Size = new System.Drawing.Size(268, 22);
+            this.txtAccessFileName.TabIndex = 1;
             // 
             // label2
             // 
@@ -108,53 +108,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "FileName";
             // 
-            // _btnExport
+            // btnExport
             // 
-            this._btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnExport.Location = new System.Drawing.Point(331, 162);
-            this._btnExport.Name = "_btnExport";
-            this._btnExport.Size = new System.Drawing.Size(57, 23);
-            this._btnExport.TabIndex = 2;
-            this._btnExport.Text = "Export";
-            this._btnExport.UseVisualStyleBackColor = true;
-            this._btnExport.Click += new System.EventHandler(this._btnExport_Click);
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.Location = new System.Drawing.Point(331, 162);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(57, 23);
+            this.btnExport.TabIndex = 2;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
-            // _rtxLogs
+            // rtxLogs
             // 
-            this._rtxLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtxLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._rtxLogs.BackColor = System.Drawing.SystemColors.Info;
-            this._rtxLogs.Location = new System.Drawing.Point(13, 191);
-            this._rtxLogs.Name = "_rtxLogs";
-            this._rtxLogs.ReadOnly = true;
-            this._rtxLogs.Size = new System.Drawing.Size(375, 205);
-            this._rtxLogs.TabIndex = 3;
-            this._rtxLogs.Text = "";
+            this.rtxLogs.BackColor = System.Drawing.SystemColors.Info;
+            this.rtxLogs.Location = new System.Drawing.Point(13, 191);
+            this.rtxLogs.Name = "rtxLogs";
+            this.rtxLogs.ReadOnly = true;
+            this.rtxLogs.Size = new System.Drawing.Size(375, 205);
+            this.rtxLogs.TabIndex = 3;
+            this.rtxLogs.Text = "";
             // 
-            // _grpExport
+            // grpExport
             // 
-            this._grpExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpExport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._grpExport.Controls.Add(this._txtSQLiteFileName);
-            this._grpExport.Controls.Add(this.label3);
-            this._grpExport.Controls.Add(this._btnSQLiteSelect);
-            this._grpExport.Location = new System.Drawing.Point(13, 105);
-            this._grpExport.Name = "_grpExport";
-            this._grpExport.Size = new System.Drawing.Size(375, 51);
-            this._grpExport.TabIndex = 1;
-            this._grpExport.TabStop = false;
-            this._grpExport.Text = "SQLite Export";
+            this.grpExport.Controls.Add(this.txtSQLiteFileName);
+            this.grpExport.Controls.Add(this.label3);
+            this.grpExport.Controls.Add(this.btnSQLiteSelect);
+            this.grpExport.Location = new System.Drawing.Point(13, 105);
+            this.grpExport.Name = "grpExport";
+            this.grpExport.Size = new System.Drawing.Size(375, 51);
+            this.grpExport.TabIndex = 1;
+            this.grpExport.TabStop = false;
+            this.grpExport.Text = "SQLite Export";
             // 
-            // _txtSQLiteFileName
+            // txtSQLiteFileName
             // 
-            this._txtSQLiteFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSQLiteFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._txtSQLiteFileName.Location = new System.Drawing.Point(67, 21);
-            this._txtSQLiteFileName.Name = "_txtSQLiteFileName";
-            this._txtSQLiteFileName.ReadOnly = true;
-            this._txtSQLiteFileName.Size = new System.Drawing.Size(268, 22);
-            this._txtSQLiteFileName.TabIndex = 1;
+            this.txtSQLiteFileName.Location = new System.Drawing.Point(67, 21);
+            this.txtSQLiteFileName.Name = "txtSQLiteFileName";
+            this.txtSQLiteFileName.ReadOnly = true;
+            this.txtSQLiteFileName.Size = new System.Drawing.Size(268, 22);
+            this.txtSQLiteFileName.TabIndex = 1;
             // 
             // label3
             // 
@@ -165,52 +165,52 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "FileName";
             // 
-            // _btnSQLiteSelect
+            // btnSQLiteSelect
             // 
-            this._btnSQLiteSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnSQLiteSelect.Location = new System.Drawing.Point(341, 19);
-            this._btnSQLiteSelect.Name = "_btnSQLiteSelect";
-            this._btnSQLiteSelect.Size = new System.Drawing.Size(28, 23);
-            this._btnSQLiteSelect.TabIndex = 2;
-            this._btnSQLiteSelect.Text = "...";
-            this._btnSQLiteSelect.UseVisualStyleBackColor = true;
-            this._btnSQLiteSelect.Click += new System.EventHandler(this._btnSQLiteSelect_Click);
+            this.btnSQLiteSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSQLiteSelect.Location = new System.Drawing.Point(341, 19);
+            this.btnSQLiteSelect.Name = "btnSQLiteSelect";
+            this.btnSQLiteSelect.Size = new System.Drawing.Size(28, 23);
+            this.btnSQLiteSelect.TabIndex = 2;
+            this.btnSQLiteSelect.Text = "...";
+            this.btnSQLiteSelect.UseVisualStyleBackColor = true;
+            this.btnSQLiteSelect.Click += new System.EventHandler(this.BtnSQLiteSelect_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 408);
-            this.Controls.Add(this._grpExport);
-            this.Controls.Add(this._btnExport);
-            this.Controls.Add(this._rtxLogs);
-            this.Controls.Add(this._grpImport);
+            this.Controls.Add(this.grpExport);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.rtxLogs);
+            this.Controls.Add(this.grpImport);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccessToSQLite";
-            this._grpImport.ResumeLayout(false);
-            this._grpImport.PerformLayout();
-            this._grpExport.ResumeLayout(false);
-            this._grpExport.PerformLayout();
+            this.grpImport.ResumeLayout(false);
+            this.grpImport.PerformLayout();
+            this.grpExport.ResumeLayout(false);
+            this.grpExport.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox _grpImport;
-        private System.Windows.Forms.Button _btnAccessSelect;
-        private System.Windows.Forms.TextBox _txtAccessFileName;
+        private System.Windows.Forms.GroupBox grpImport;
+        private System.Windows.Forms.Button btnAccessSelect;
+        private System.Windows.Forms.TextBox txtAccessFileName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button _btnExport;
-        private System.Windows.Forms.RichTextBox _rtxLogs;
-        private System.Windows.Forms.TextBox _txtAccessPassword;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.RichTextBox rtxLogs;
+        private System.Windows.Forms.TextBox txtAccessPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox _grpExport;
-        private System.Windows.Forms.TextBox _txtSQLiteFileName;
+        private System.Windows.Forms.GroupBox grpExport;
+        private System.Windows.Forms.TextBox txtSQLiteFileName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button _btnSQLiteSelect;
+        private System.Windows.Forms.Button btnSQLiteSelect;
     }
 }
 

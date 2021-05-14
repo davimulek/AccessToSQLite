@@ -9,11 +9,11 @@ namespace AccessToSQLite.UI
 {
     public partial class MainForm : Form
     {
-        private AccessExportOptions _options;
+        private readonly AccessExportOptions options;
 
         public MainForm(AccessExportOptions options) : this()
         {
-            _options = options;
+            this.options = options;
             RefreshForm();
         }
 
@@ -23,66 +23,66 @@ namespace AccessToSQLite.UI
 
             var assembly = Assembly.GetExecutingAssembly();
             var fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-            Text = $"AccessToSQLite v{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}";
+            Text = $@"AccessToSQLite v{fvi.FileMajorPart}.{fvi.FileMinorPart}.{fvi.FileBuildPart}";
         }
 
         private void RefreshForm()
         {
-            _txtAccessFileName.Text = _options.AccessFileName;
-            _txtAccessPassword.Text = _options.AccessPassword;
-            _txtSQLiteFileName.Text = _options.SQLiteFileName;
+            txtAccessFileName.Text = options.AccessFileName;
+            txtAccessPassword.Text = options.AccessPassword;
+            txtSQLiteFileName.Text = options.SqLiteFileName;
 
-            _btnExport.Enabled = _options.CanExport;
+            btnExport.Enabled = options.CanExport;
 
-            _grpImport.Enabled = !_options.Executing;
-            _grpExport.Enabled = !_options.Executing;
+            grpImport.Enabled = !options.Executing;
+            grpExport.Enabled = !options.Executing;
         }
 
-        private void _btnAccessSelect_Click(object sender, EventArgs e)
+        private void BtnAccessSelect_Click(object sender, EventArgs e)
         {
             using (var dialog = new OpenFileDialog
             {
-                Filter = "Access Files (*.mdb)|*.mdb|All files (*.*)|*.*"
+                Filter = @"Access Files (*.mdb)|*.mdb|All files (*.*)|*.*"
             })
             {
                 var result = dialog.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    _options.AccessFileName = dialog.FileName;
+                    options.AccessFileName = dialog.FileName;
                     RefreshForm();
                 }
             }
         }
 
-        private void _btnSQLiteSelect_Click(object sender, EventArgs e)
+        private void BtnSQLiteSelect_Click(object sender, EventArgs e)
         {
             using (var dialog = new SaveFileDialog
             {
-                Filter = "SQLite Files (*.sqlite3)|*.sqlite3|All files (*.*)|*.*",
-                InitialDirectory = _options.SQLiteInitialDirectory,
-                FileName = _options.SQLiteDefaultFileName,
+                Filter = @"SQLite Files (*.sqlite3)|*.sqlite3|All files (*.*)|*.*",
+                InitialDirectory = options.SqLiteInitialDirectory,
+                FileName = options.SqLiteDefaultFileName,
             })
             {
                 var result = dialog.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    _options.SQLiteFileName = dialog.FileName;
+                    options.SqLiteFileName = dialog.FileName;
                     RefreshForm();
                 }
             }
         }
 
-        private void _btnExport_Click(object sender, EventArgs e)
+        private void BtnExport_Click(object sender, EventArgs e)
         {
-            _options.Executing = true;
+            options.Executing = true;
             RefreshForm();
 
-            _rtxLogs.Clear();
-            _rtxLogs.Text += "Export Started";
+            rtxLogs.Clear();
+            rtxLogs.Text += @"Export Started";
 
             Task.Factory.StartNew(() =>
             {
-                var export = new Export(_options);
+                var export = new Export(options);
                 return export.Execute();
             })
             .ContinueWith(t =>
@@ -90,25 +90,25 @@ namespace AccessToSQLite.UI
                 switch (t.Result)
                 {
                     case ExportResult.Success:
-                        _rtxLogs.Text += "\nExport Complete";
+                        rtxLogs.Text += @"\nExport Complete";
                         break;
                     case ExportResult.PasswordInvalid:
-                        _rtxLogs.Text += "\nPassword Invalid";
+                        rtxLogs.Text += @"\nPassword Invalid";
                         break;
                     case ExportResult.ImportError:
-                        _rtxLogs.Text += "\nImport Error";
+                        rtxLogs.Text += @"\nImport Error";
                         break;
                 }
 
-                _options.Executing = false;
+                options.Executing = false;
                 RefreshForm();
 
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        private void _txtAccessPassword_TextChanged(object sender, EventArgs e)
+        private void TxtAccessPassword_TextChanged(object sender, EventArgs e)
         {
-            _options.AccessPassword = _txtAccessPassword?.Text;
+            options.AccessPassword = txtAccessPassword?.Text;
         }
     }
 }

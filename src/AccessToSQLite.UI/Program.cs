@@ -12,10 +12,6 @@ namespace AccessToSQLite.UI
         [STAThread]
         static void Main(params string[] args)
         {
-            // TODO: Readme:
-            // Ensure download install system compatible Access driver from here:
-            // http://www.microsoft.com/download/en/details.aspx?id=13255
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

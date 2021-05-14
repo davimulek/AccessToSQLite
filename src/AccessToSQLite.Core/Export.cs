@@ -9,13 +9,13 @@ namespace AccessToSQLite.Core
 {
     public class Export
     {
-        private readonly AccessExportOptions _options;
-        private readonly SQLiteProvider _sqliteProvider;
+        private readonly AccessExportOptions options;
+        private readonly SqLiteProvider sqliteProvider;
 
         public Export(AccessExportOptions options)
         {
-            _options = options;
-            _sqliteProvider = new SQLiteProvider(options.SQLiteFileName);
+            this.options = options;
+            sqliteProvider = new SqLiteProvider(options.SqLiteFileName);
         }
 
         public ExportResult Execute()
@@ -24,14 +24,14 @@ namespace AccessToSQLite.Core
 
             try
             {
-                ds = AccessDbLoader.LoadFromFile(_options.AccessFileName, _options.AccessPassword);
+                ds = AccessDbLoader.LoadFromFile(options.AccessFileName, options.AccessPassword);
 
-                _sqliteProvider.CreateDatabase();
+                sqliteProvider.CreateDatabase();
 
                 foreach (var table in ds.Tables.Cast<DataTable>())
                 {
                     var tableSql = ImportTable(table);
-                    using (var conn = _sqliteProvider.GetConnection())
+                    using (var conn = sqliteProvider.GetConnection())
                         conn.Execute(tableSql);
 
                     InsertData(table);
@@ -56,7 +56,7 @@ namespace AccessToSQLite.Core
             var tableName = table.FixedTableName();
             var insertSql = $"INSERT INTO {tableName} ({columnSql}) VALUES ({paramSql})";
 
-            using (var conn = _sqliteProvider.GetConnection())
+            using (var conn = sqliteProvider.GetConnection())
             using (var tx = conn.BeginTransaction())
             {
                 foreach (DataRow row in table.Rows)
@@ -119,8 +119,10 @@ namespace AccessToSQLite.Core
 
             if (type == typeof(int) || type == typeof(short) || type == typeof(long) || type == typeof(bool) || type == typeof(byte))
                 return "INTEGER";
+
             else if (type == typeof(string) || type == typeof(DateTime))
                 return "TEXT";
+
             else if (type == typeof(float) || type == typeof(double) || type == typeof(decimal))
                 return "REAL";
 
@@ -140,7 +142,7 @@ namespace AccessToSQLite.Core
 
     public static class DataColumnExtensions
     {
-        private static string[] ReservedKeyWords = new string[]
+        private static string[] reservedKeyWords = new string[]
         {
             "ABORT",
             "ACTION",
@@ -273,7 +275,7 @@ namespace AccessToSQLite.Core
             // Column names should not contain spaces or periods.
             var columnName = column.ColumnName.Trim().Replace(' ', '_').Replace('.', '_');
             // Restrict column names from containing reserved SQLite keywords.
-            if (ReservedKeyWords.Contains(columnName.ToUpper()))
+            if (reservedKeyWords.Contains(columnName.ToUpper()))
                 return columnName + "_";
             return columnName;
         }

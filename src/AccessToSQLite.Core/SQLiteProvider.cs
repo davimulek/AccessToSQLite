@@ -3,16 +3,16 @@ using System.IO;
 
 namespace AccessToSQLite.Core
 {
-    public class SQLiteProvider
+    public class SqLiteProvider
     {
-        private readonly string _fileName;
+        private readonly string fileName;
 
-        public SQLiteProvider(string fileName)
+        public SqLiteProvider(string fileName)
         {
-            _fileName = fileName;
+            this.fileName = fileName;
         }
 
-        private string ConnectionString => $"Data Source={_fileName};Version=3;";
+        private string ConnectionString => $"Data Source={fileName};Version=3;";
 
         public SQLiteConnection GetConnection()
         {
@@ -22,10 +22,10 @@ namespace AccessToSQLite.Core
 
         public void CreateDatabase()
         {
-            if (File.Exists(_fileName))
-                File.Delete(_fileName);
+            if (File.Exists(fileName))
+                File.Delete(fileName);
 
-            SQLiteConnection.CreateFile(_fileName);
+            SQLiteConnection.CreateFile(fileName);
         }
     }
 }

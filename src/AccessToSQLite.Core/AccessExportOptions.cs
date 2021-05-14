@@ -4,30 +4,30 @@ namespace AccessToSQLite.Core
 {
     public class AccessExportOptions
     {
-        private string _accessFileName;
+        private string accessFileName;
 
         public string AccessFileName
         {
-            get { return _accessFileName; }
+            get { return accessFileName; }
             set
             {
-                _accessFileName = value;
-                SQLiteFileName = Path.Combine(SQLiteInitialDirectory, SQLiteDefaultFileName);
+                accessFileName = value;
+                SqLiteFileName = Path.Combine(SqLiteInitialDirectory, SqLiteDefaultFileName);
             }
         }
 
         public string AccessPassword { get; set; }
 
-        public string SQLiteFileName { get; set; }
+        public string SqLiteFileName { get; set; }
 
         public bool Executing { get; set; }
         
-        public bool CanExport => File.Exists(AccessFileName) && !Executing && !string.IsNullOrEmpty(SQLiteFileName);
+        public bool CanExport => File.Exists(AccessFileName) && !Executing && !string.IsNullOrEmpty(SqLiteFileName);
 
-        public bool SQLiteFileExists => File.Exists(SQLiteFileName);
+        public bool SqLiteFileExists => File.Exists(SqLiteFileName);
 
-        public string SQLiteInitialDirectory => Path.GetDirectoryName(AccessFileName);
+        public string SqLiteInitialDirectory => Path.GetDirectoryName(AccessFileName);
 
-        public string SQLiteDefaultFileName => Path.GetFileNameWithoutExtension(AccessFileName) + ".sqlite3";
+        public string SqLiteDefaultFileName => $"{Path.GetFileNameWithoutExtension(AccessFileName)}.sqlite3";
     }
 }
